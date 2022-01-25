@@ -1,0 +1,24 @@
+<div class="top-list">
+  <h2>Welcome to the list</h2>
+</div>
+
+
+
+
+
+<ul><% @list.movies.each do |movie|  %>
+    <li>
+      <%= movie.title %>
+      <% bookmark = Bookmark.where('list_id = ?', @list.id).where('movie_id = ?', movie.id).first %>
+      <%= link_to '',
+              bookmark_path(bookmark),
+              method: :delete,
+              class: "far fa-trash-alt",
+              data: { confirm: "Are you sure?" } %>
+    </li>
+    <% end %>
+  </ul>
+<div class="d-flex">
+<div><%= link_to "Add a movie to this list", new_list_bookmark_path(@list), class: "btn btn-primary m-2" %></div>
+<div><%= link_to "Back", lists_path, class: "btn btn-secondary m-2" %></div>
+</div>
