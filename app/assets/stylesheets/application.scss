@@ -10,16 +10,14 @@
 
 // Your CSS partials
 @import "components/index";
+@import "components/card";
+@import "components/banner";
 @import "pages/index";
+
 
 .list_bg{
   background-image: url(https://www.journaldugeek.com/content/uploads/2020/04/cinema.jpg);
   background-size: cover;
   height: 350px;
   background-position: center;
-}
-.card{
-  background-image: url(https://www.journaldugeek.com/content/uploads/2020/04/cinema.jpg);
-  height: 150px;
-  width: 500px;
 }

@@ -1,6 +1,18 @@
-<div class="top-list">
-  <h2>Welcome to the list</h2>
-</div>
+<% if @list.photo.key.present? %>
+  <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url('<%= cl_image_path @list.photo.key, height: 300, width: 1500 %>');">
+    <div class="container">
+      <h2 class="banner-h2">List <%= @list.name %></h2>
+    </div>
+  </div>
+<% else %>
+  <div class="banner" style="background-color:grey;">
+    <div class="container">
+      <h2 class="banner-h2">List <%= @list.name %></h2>
+    </div>
+  </div>
+<% end %>
+
+
 
 
 
